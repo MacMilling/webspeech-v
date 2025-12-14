@@ -1,0 +1,95 @@
+/* WebSpeech V - Theme and Color Variables */
+/* MacMilling Branding Color Scheme */
+
+:root {
+  /* Primary colors - Deep Blues */
+  --primary-900: #0A2463;
+  --primary-700: #3E60A3;
+  --primary-500: #5B7EC8;
+  --primary-300: #8AAEE0;
+  --primary-100: #D4E4F7;
+  
+  /* Accent colors - Coral/Red */
+  --accent-600: #F76C5E;
+  --accent-400: #F9968B;
+  --accent-200: #FCCAC3;
+  
+  /* Neutral colors - Grays */
+  --neutral-900: #1A1D29;
+  --neutral-700: #3D4152;
+  --neutral-500: #6E7491;
+  --neutral-300: #B8BCCF;
+  --neutral-100: #E8EAF0;
+  --neutral-50: #F5F6FA;
+  
+  /* Semantic colors */
+  --success: #34C759;
+  --warning: #FF9500;
+  --error: #FF3B30;
+  --info: #5AC8FA;
+  
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: var(--neutral-50);
+  --bg-tertiary: var(--neutral-100);
+  
+  /* Text colors */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-700);
+  --text-muted: var(--neutral-500);
+  
+  /* Border colors */
+  --border-light: #e0e0e0;
+  --border-medium: #cccccc;
+  --border-dark: var(--neutral-300);
+  
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  
+  /* Typography */
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  
+  /* Line heights */
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Z-index layers */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
