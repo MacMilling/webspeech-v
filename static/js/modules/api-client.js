@@ -45,12 +45,23 @@ export class ApiClient {
   }
 
   /**
-   * POST request with JSON data
+   * POST request with JSON or FormData
    * @param {string} url - API endpoint
    * @param {object} data - Data to send
+   * @param {object} options - Additional options
    * @returns {Promise<object>} Response data
    */
-  async post(url, data) {
+  async post(url, data, options = {}) {
+    // Check if data is already FormData
+    if (data instanceof FormData) {
+      return this.request(url, {
+        method: 'POST',
+        body: data,
+        ...options
+      });
+    }
+
+    // Convert object to FormData (Flask expects FormData for most endpoints)
     const formData = new FormData();
     for (const key in data) {
       formData.append(key, data[key]);
@@ -59,6 +70,7 @@ export class ApiClient {
     return this.request(url, {
       method: 'POST',
       body: formData,
+      ...options
     });
   }
 
