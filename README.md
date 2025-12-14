@@ -1,4 +1,14 @@
-[English README](./README_EN.md)  / [捐助项目](https://github.com/jianchang512/pyvideotrans/issues/80) / [Discord](https://discord.gg/7ZWbwKGMcx)
+[English README](./README_EN.md)
+
+<div align="center">
+  <img src="./docs/logo_macmilling.png" alt="MacMilling Logo" width="400"/>
+  
+  # WebSpeech V
+  
+  **by MacMilling Computer-Software Entertainment Technologies**
+</div>
+
+---
 
 # CV声音克隆工具
 
