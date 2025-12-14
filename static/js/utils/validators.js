@@ -1,6 +1,8 @@
 // WebSpeech V - Input Validators
 // Validation functions for form inputs
 
+import CONFIG from './config.js';
+
 export class Validators {
   /**
    * Validate text input for TTS
@@ -39,9 +41,7 @@ export class Validators {
    * @returns {object} {valid: boolean, error: string}
    */
   static validateLanguage(language) {
-    const validLanguages = ['zh-cn', 'en', 'ja', 'ko', 'es', 'de', 'fr', 'it', 'tr', 'ru', 'pt', 'pl', 'nl', 'ar', 'hu', 'cs'];
-    
-    if (!language || !validLanguages.includes(language.toLowerCase())) {
+    if (!language || !CONFIG.SUPPORTED_LANGUAGES.includes(language.toLowerCase())) {
       return { valid: false, error: 'Invalid language selection' };
     }
     
@@ -57,11 +57,15 @@ export class Validators {
     const speedNum = parseFloat(speed);
     
     if (isNaN(speedNum)) {
-      return { valid: false, error: 'Speed must be a number', value: 1.0 };
+      return { valid: false, error: 'Speed must be a number', value: CONFIG.SPEED.DEFAULT };
     }
     
-    if (speedNum < 0.1 || speedNum > 2.0) {
-      return { valid: false, error: 'Speed must be between 0.1 and 2.0', value: 1.0 };
+    if (speedNum < CONFIG.SPEED.MIN || speedNum > CONFIG.SPEED.MAX) {
+      return { 
+        valid: false, 
+        error: `Speed must be between ${CONFIG.SPEED.MIN} and ${CONFIG.SPEED.MAX}`, 
+        value: CONFIG.SPEED.DEFAULT 
+      };
     }
     
     return { valid: true, error: null, value: speedNum };

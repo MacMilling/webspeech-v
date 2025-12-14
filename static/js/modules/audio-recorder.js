@@ -2,15 +2,26 @@
 // Audio recording functionality using MediaRecorder API
 
 export class AudioRecorder {
-  constructor() {
+  constructor(options = {}) {
     this.mediaRecorder = null;
     this.audioChunks = [];
     this.stream = null;
     this.recordingTime = 0;
     this.timerInterval = null;
-    this.maxRecordingTime = 20; // Maximum recording time in seconds
+    this.maxRecordingTime = options.maxRecordingTime || 20; // Maximum recording time in seconds
     this.onTimeUpdate = null;
     this.onRecordingComplete = null;
+  }
+
+  /**
+   * Get recorded audio blob
+   * @returns {Blob|null} Recorded audio blob or null if no recording
+   */
+  getRecordedBlob() {
+    if (this.audioChunks.length === 0) {
+      return null;
+    }
+    return new Blob(this.audioChunks, { type: 'audio/wav' });
   }
 
   /**

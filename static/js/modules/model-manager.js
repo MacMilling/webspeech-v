@@ -21,6 +21,17 @@ export class ModelManager {
     this.modelListElement = modelListElement;
     this.modelSelectElement = modelSelectElement;
     
+    // Set up event delegation for model buttons
+    if (this.modelListElement) {
+      this.modelListElement.addEventListener('click', (e) => {
+        const button = e.target.closest('button[data-model-name]');
+        if (button) {
+          const modelName = button.getAttribute('data-model-name');
+          this.toggleModel(modelName, button);
+        }
+      });
+    }
+    
     // Load initial model status
     this.loadModels();
   }
@@ -66,7 +77,7 @@ export class ModelManager {
           data-model-id="${name}" 
           class="btn btn-sm btn-outline-primary flex-grow-0" 
           data-status="${dataStatus}" 
-          onclick="window.app.modelManager.toggleModel('${name}', this)"
+          data-model-name="${name}"
         >
           ${name}/${statusText}
         </button>

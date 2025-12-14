@@ -145,6 +145,23 @@ class WebSpeechApp {
    * @private
    */
   initializeEventListeners() {
+    // Mode toggle buttons
+    const modeToggle = document.querySelector('.mode-toggle');
+    if (modeToggle) {
+      modeToggle.addEventListener('click', (e) => {
+        const button = e.target.closest('button[data-mode]');
+        if (button) {
+          const mode = button.getAttribute('data-mode');
+          this.toggleMode(mode);
+          
+          // Update button states
+          const buttons = modeToggle.querySelectorAll('button');
+          buttons.forEach(btn => btn.classList.remove('btn-primary'));
+          button.classList.add('btn-primary');
+        }
+      });
+    }
+
     // Recording controls
     const startRecord = document.getElementById('startRecord');
     const stopRecord = document.getElementById('stopRecord');
@@ -181,13 +198,13 @@ class WebSpeechApp {
     }
 
     // Voice audition
-    const auditionLinks = document.querySelectorAll('[onclick*="shiting"]');
-    auditionLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    const auditionBtn = document.getElementById('voiceAuditionBtn');
+    if (auditionBtn) {
+      auditionBtn.addEventListener('click', (e) => {
         e.preventDefault();
         this.handleVoiceAudition();
       });
-    });
+    }
 
     // Model selection change
     const modelSelect = document.getElementById('model');
@@ -345,7 +362,12 @@ class WebSpeechApp {
 
     try {
       // Get recorded audio blob
-      const audioBlob = new Blob(this.audioRecorder.audioChunks, { type: 'audio/wav' });
+      const audioBlob = this.audioRecorder.getRecordedBlob();
+      
+      if (!audioBlob) {
+        console.error('No recording available');
+        return;
+      }
       
       // Create form data
       const formData = new FormData();

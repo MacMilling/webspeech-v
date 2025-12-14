@@ -67,10 +67,8 @@
 
             <!-- Mode Toggle -->
             <div class="mode-toggle">
-                <button onclick="window.app.toggleMode('tts'); this.classList.add('btn-primary'); this.nextElementSibling.classList.remove('btn-primary');" 
-                        class="btn btn-primary" data-en="Text → Speech" data-cn="文字→声音">Text → Speech</button>
-                <button onclick="window.app.toggleMode('sts'); this.classList.add('btn-primary'); this.previousElementSibling.classList.remove('btn-primary');" 
-                        class="btn" data-en="Speech → Speech" data-cn="声音→声音">Speech → Speech</button>
+                <button class="btn btn-primary" data-mode="tts" data-en="Text → Speech" data-cn="文字→声音">Text → Speech</button>
+                <button class="btn" data-mode="sts" data-en="Speech → Speech" data-cn="声音→声音">Speech → Speech</button>
             </div>
 
             <!-- Model Manager -->
@@ -120,7 +118,7 @@
                         <div class="parameter-group">
                             <label for="audioSelect" class="form-label">
                                 <span data-en="Voice File:" data-cn="声音文件:">Voice File:</span>
-                                <a href="javascript:;" onclick="window.app.handleVoiceAudition()"
+                                <a href="javascript:;" id="voiceAuditionBtn"
                                    class="btn btn-sm btn-link" data-en="Preview" data-cn="试听">Preview</a>
                             </label>
                             <select class="form-select" id="audioSelect"></select>
