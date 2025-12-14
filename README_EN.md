@@ -1,4 +1,14 @@
-[简体中文](./README.md) / [Discord](https://discord.gg/TMCM2PfHzQ) / [Buy me a coffee](https://ko-fi.com/jianchang512) / [Twitter](https://twitter.com/mortimer_wang)
+[简体中文](./README.md)
+
+<div align="center">
+  <img src="./docs/logo_macmilling.png" alt="MacMilling Logo" width="400"/>
+  
+  # WebSpeech V
+  
+  **by MacMilling Computer-Software Entertainment Technologies**
+</div>
+
+---
 
 # CV Voice Clone Tool
 

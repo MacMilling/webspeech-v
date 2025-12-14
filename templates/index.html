@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="/static/js/bootstrap.min.css" rel="stylesheet">
-    <title data-en="Voice Clone - Speak with Any Voice" data-cn="语音克隆-用任意声音说话"></title>
+    <title data-en="WebSpeech V - Voice Clone Tool" data-cn="WebSpeech V - 语音克隆工具"></title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -126,19 +126,22 @@
 </head>
 <body>
 <div class="container mb-2">
+    <div class="text-center my-3">
+        <img src="/static/images/logo_macmilling.png" alt="MacMilling Logo" style="max-width: 300px; height: auto;">
+        <h2 class="mt-2" data-en="WebSpeech V" data-cn="WebSpeech V"></h2>
+        <p class="text-muted" data-en="by MacMilling Computer-Software Entertainment Technologies" 
+           data-cn="by MacMilling Computer-Software Entertainment Technologies"></p>
+    </div>
     <div class="alert  rounded-0" role="alert">
         <h4 class="alert-heading d-flex justify-content-between">
-            <span class="text-danger" data-en="Voice Clone - Speak with Any Voice v{{ version }}"
-                  data-cn="语音克隆-用任意声音说话! v{{ version }}"></span>
+            <span class="text-danger" data-en="Voice Clone Tool v{{ version }}"
+                  data-cn="语音克隆工具 v{{ version }}"></span>
             <span>
-                <a href="https://github.com/jianchang512/clone-voice/releases" target="_blank"
+                <a href="https://github.com/MacMilling/webspeech-v/releases" target="_blank"
                    class="d-none fs-6 text-danger btn" id="checkupdate"></a>
-			<a class="fs-6 text-black btn" href="https://github.com/jianchang512/clone-voice" target="_blank">Github</a>
-			<a class="fs-6 text-black btn" href="https://github.com/jianchang512/clone-voice/issue" target="_blank"
+			<a class="fs-6 text-black btn" href="https://github.com/MacMilling/webspeech-v" target="_blank">Github</a>
+			<a class="fs-6 text-black btn" href="https://github.com/MacMilling/webspeech-v/issues" target="_blank"
                data-en="Post a Issue" data-cn="遇到问题?"></a>
-			<a class="fs-6 text-success btn" href="javascript:;" onclick="showjz(this)"
-               data-href="https://github.com/jianchang512/pyvideotrans/issues/80"
-               data-en="Donate to the project" data-cn="捐助该项目"></a>
 			</span>
         </h4>
         <hr>
@@ -323,8 +326,6 @@
         'lang14': "[文字->声音]或[声音->声音]线程还没有启动完毕，请等待",
         'lang15': '已转为wav格式: ',
         'lang16': '速度必须在0.1--2.0之间，1为正常速度，2为两倍速',
-        'lang17': '捐助该项目',
-        'lang18': '如果项目对你有帮助，节省了时间和金钱，请考虑小额资助开发者，帮助项目能够长期保持更新和维护。',
         "lang19":"运行中",
         "lang20":"已停止"
 
@@ -346,8 +347,6 @@
         'lang14': "[text->speech] or [speech->speech] thread not started，hold on",
         'lang15': 'Convered to wav format: ',
         'lang16': 'speed between 0.1 and 2.0，1 is normal speed',
-        'lang17': 'Donate to the project',
-        'lang18': 'If the project is helpful to you, saving time and money, please consider providing small funding to developers help the project can be updated and maintained for a long time',
         'lang19':'Runing',
         'lang20':'Stoped'
     };

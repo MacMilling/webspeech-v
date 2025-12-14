@@ -145,7 +145,7 @@ if __name__ == "__main__":
     args=json.load(open(param_file,'r',encoding='utf-8'))
     args['out_path']=TTSMODEL_DIR
 
-    with gr.Blocks(css="ul.options[role='listbox']{background:#ffffff}",title="clone-voice trainer") as demo:
+    with gr.Blocks(css="ul.options[role='listbox']{background:#ffffff}",title="WebSpeech V Trainer") as demo:
         if not proxy:
             gr.Markdown("""**没有配置代理，训练中可能出错，建议在.env文件中 `HTTP_PROXY=`后填写代理地址**""")
         with gr.Tab("训练平台"):
@@ -277,7 +277,7 @@ if __name__ == "__main__":
                     reference_audio = gr.Audio(label="作为参考的音频.")
             tts_btn = gr.Button(value="第三步：自动填充参考音频后，点击测试模型效果")
             copy_label=gr.Label(label="")
-            move_btn = gr.Button(value="第四步：效果如果满意，点击复制到clone-voice中使用它")
+            move_btn = gr.Button(value="第四步：效果如果满意，点击复制到WebSpeech V中使用它")
             
             
 
